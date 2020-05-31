@@ -15,6 +15,9 @@ import { RestService } from "./services/rest.service";
 import { DataService } from "./services/data.service";
 import { routing } from "./app.routing";
 import { GradesComponent } from "./grades/grades.component";
+import { PagesComponent } from './pages/pages.component';
+import { CreditsComponent } from './credits/credits.component';
+import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,9 @@ import { GradesComponent } from "./grades/grades.component";
     SiteHeaderComponent,
     SiteFooterComponent,
     GradesComponent,
+    PagesComponent,
+    CreditsComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
