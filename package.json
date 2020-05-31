@@ -2,10 +2,16 @@
   "name": "com.fr4nc3.gretel",
   "displayName": "HanselGretel",
   "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "description": "Hansel and Gretel app book",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && npm run bundle && webpack-dev-server --port 4200 --colors --watch --content-base www",
+    "bundle": "webpack --config webpack.config.js --source-map",
+    "cordova:android": "tsc && npm run bundle && cordova run android",
+    "cordova:ios": "tsc && npm run bundle && cordova run ios",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings install"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -13,13 +19,41 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "@angular/common": "^9.1.9",
+    "@angular/compiler": "^9.1.9",
+    "@angular/core": "^9.1.9",
+    "@angular/platform-browser": "^9.1.9",
+    "@angular/platform-browser-dynamic": "^9.1.9",
+    "@angular/router": "^9.1.9",
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.1.1",
-    "cordova-plugin-splashscreen": "^5.0.3"
+    "cordova-plugin-splashscreen": "^5.0.3",
+    "core-js": "^3.6.5",
+    "es6-shim": "^0.35.5",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.5",
+    "systemjs": "^6.3.2",
+    "zone.js": "^0.10.3"
   },
   "devDependencies": {
-    "cordova-plugin-whitelist": "^1.3.4"
+    "@types/cordova": "0.0.34",
+    "@types/cordova-plugin-device": "^1.1.5",
+    "@types/node": "^14.0.6",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "cordova-plugin-whitelist": "^1.3.4",
+    "css-loader": "^3.5.3",
+    "html-loader": "^1.1.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.3",
+    "typings": "^2.1.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "cordova": {
     "plugins": {
