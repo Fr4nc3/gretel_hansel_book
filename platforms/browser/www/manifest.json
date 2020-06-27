@@ -4,8 +4,8 @@
   "name": "HanselGretel",
   "short_name": "HanselGretel",
   "version": "com.fr4nc3.gretel",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
+  "description": "Hansel and Gretel",
+  "author": "Fr4nc3",
   "icons": [],
   "start_url": "index.html"
 }

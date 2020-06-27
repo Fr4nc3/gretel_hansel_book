@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "client-app": {
-      "root": "",
+    "gretel_hansel": {
+      "root": "scr",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "res",
+      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -17,12 +17,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "www/",
+            "outputPath": "www",
             "index": "src/index.html",
-            "main": "src.app/main.ts",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/assetsfavicon.ico", "src/assets"],
-            "styles": ["src/scss/styles.scss"],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
