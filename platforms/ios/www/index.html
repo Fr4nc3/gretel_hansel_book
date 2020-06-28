@@ -9,9 +9,48 @@
   <script type="text/javascript" src="cordova.js"></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body onload="onBodyLoad()">
+<div id="vid_container"> 
+<video id="movie" width="768" height="1024"  autoplay="autoplay" preload="auto" controls="false" poster="assets/img/ipad2/common/Default-ipad.png" style="object-fit:fill;">
+<source src="assets/video/ipad.m4v" />
+</video>
+</div>
   <app-root></app-root>
   <script type="text/javascript">
+    function preventBehavior(e){ 
+    e.preventDefault(); 
+    };
+    document.addEventListener("touchmove", preventBehavior, false);
+
+    function onBodyLoad()
+    {		
+         document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    function onDeviceReady() {
+      document.addEventListener("resume", onResume, false);
+    }
+
+    function onResume() {
+        //#menu_common" data-transition="slideup"
+        //  $.mobile.changePage($('#menu_principal'),{transition: "slideup"});
+
+    }
+
+var callback = function(){
+    document.getElementById('movie').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+      document.getElementById('vid_container').style.display="none";
+    }
+};
+
+if (
+    document.readyState === "complete" ||
+    (document.readyState !== "loading" && !document.documentElement.doScroll)
+) {
+  callback();
+} else {
+  document.addEventListener("DOMContentLoaded", callback);
+}
 </script>
 <script src="runtime.js" defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills.js" defer></script><script src="styles.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
 </html>

@@ -104,3 +104,5 @@ dist
 .tern-port
 www/
 www-old/
+src/assets/audio/*
+src/assets/video/*
