@@ -29,13 +29,13 @@ export class AppComponent implements OnInit, OnDestroy {
     document.addEventListener(
       'deviceready',
       function () {
-        alert('plain' + device.platform);
+        // alert('plain' + device.platform);
       },
       false
     );
     Cordova.deviceready.subscribe(() => {
       this.title = device.platform;
-      alert('lala' + device.platform);
+      // alert('lala' + device.platform);
       console.log('ready from components');
     });
     // document.addEventListener(
