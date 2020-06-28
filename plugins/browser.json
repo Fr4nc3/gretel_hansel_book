@@ -12,6 +12,9 @@
     },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.fr4nc3.gretel"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.fr4nc3.gretel"
     }
   },
   "dependent_plugins": {}

@@ -6,10 +6,35 @@
   <base href="./">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type=”text/javascript” src=”cordova.js”></script>
+  <script type="text/javascript" src="cordova.js"></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body onload="onBodyLoad()">
+<div id="vid_container"> 
+<video id="movie" width="768" height="1024"  autoplay="autoplay" preload="auto" controls="false" poster="assets/img/ipad2/common/Default-ipad.png" style="object-fit:fill;">
+<source src="video/ipad.m4v" />
+</video>
+</div>
   <app-root></app-root>
+  <script type="text/javascript">
+    function preventBehavior(e){ 
+    e.preventDefault(); 
+    };
+    document.addEventListener("touchmove", preventBehavior, false);
+
+    function onBodyLoad()
+    {		
+         document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    function onDeviceReady() {
+      document.addEventListener("resume", onResume, false);
+    }
+
+    function onResume() {
+        //#menu_common" data-transition="slideup"
+        //  $.mobile.changePage($('#menu_principal'),{transition: "slideup"});
+
+    }
+</script>
 </body>
 </html>

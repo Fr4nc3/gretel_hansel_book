@@ -9,7 +9,7 @@
     "bundle": "webpack --config webpack.config.js --source-map",
     "ng": "ng",
     "start": "ng serve --watch",
-    "build": "ng build",
+    "build": "ng build && cordova build ios && Cordova run ios --target=\"iPad--7th-generation-, 13.5\" --verbose",
     "cordova:android": "tsc && npm run bundle && cordova run android",
     "cordova:ios": "tsc && npm run bundle && cordova run ios",
     "cordova:browser": "tsc && npm run bundle && cordova serve",
@@ -30,12 +30,15 @@
     "@angular/platform-browser": "^10.0.1",
     "@angular/platform-browser-dynamic": "^10.0.1",
     "@angular/router": "^10.0.1",
+    "angular-cordova": "^1.0.0",
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.1.1",
+    "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-splashscreen": "^5.0.4",
     "core-js": "^3.6.5",
     "es6-shim": "^0.35.5",
+    "ios-sim": "^9.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.5",
     "systemjs": "^6.3.2",
@@ -65,12 +68,13 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-splashscreen": {}
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-device": {}
     },
     "platforms": [
-      "ios",
       "android",
-      "browser"
+      "browser",
+      "ios"
     ]
   }
 }
