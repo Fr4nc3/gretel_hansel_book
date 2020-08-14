@@ -24,15 +24,16 @@
     0
   ); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
-
+::-webkit-media-controls {
+  display: none !important;
+}
 body {
   -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
   -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
   -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
   background-color: #e4e4e4;
   background-image: linear-gradient(top, #a7a7a7 0%, #e4e4e4 51%);
-  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
-    "Roboto", sans-serif;
+  font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 12px;
   height: 100vh;
   margin: 0px;
@@ -149,8 +150,7 @@ body {
     color-stop(0.51, #e4e4e4)
   );
   display: table-cell;
-  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial,
-    sans-serif;
+  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   vertical-align: middle;
 }
